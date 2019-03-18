@@ -1,0 +1,33 @@
+{
+  "name": "chai-tester",
+  "version": "1.0.0",
+  "description": "chai framework tester",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.12.27",
+    "@types/sequelize": "^4.27.34",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0",
+    "sequelize-typescript": "^0.6.7",
+    "winston": "^3.2.0",
+    "winston-daily-rotate-file": "^3.6.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^6.0.1",
+    "mocha-typescript": "^1.1.17",
+    "nodemon": "^1.18.9",
+    "source-map-support": "^0.5.9",
+    "typescript": "^3.2.4",
+    "uglify-js": "^3.4.9",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-node-externals": "^1.7.2",
+    "ts-loader": "^5.3.3"
+  }
+}

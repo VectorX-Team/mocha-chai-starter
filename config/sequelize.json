@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "ciaolee87",
+    "password": "Test!123",
+    "database": "iReceipt_dev",
+    "host": "ireceipt.cl99afke5lra.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306",
+    "logging": true
+  },
+  "test": {
+    "username": "ciaolee87",
+    "password": "Test!123",
+    "database": "iReceipt_test",
+    "host": "ireceipt.cl99afke5lra.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306",
+    "logging": true
+  },
+  "production": {
+    "username": "ciaolee87",
+    "password": "Test!123",
+    "database": "iReceipt_prod",
+    "host": "ireceipt.cl99afke5lra.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306",
+    "logging": false
+  }
+}
