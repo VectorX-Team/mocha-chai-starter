@@ -1,7 +1,7 @@
 import {Sequelize} from 'sequelize-typescript'
-import {StackLogger} from "../logger/StackLogger";
-import camelcase = require("camelcase");
+import camelcase from "camelcase";
 import {QueryOptions} from "sequelize";
+import Logger from "../logger/WinstonLogger";
 
 
 export class SequelizerUtil {
@@ -25,15 +25,16 @@ export class SequelizerUtil {
                 for (let rcd of result) {
                     let item: any = {};
                     for (let columnName in rcd) {
+
                         item[camelcase(columnName)] = rcd[columnName];
                     }
                     resArray.push(item);
                 }
 
-                StackLogger.stack("SQL", {sql: sql, options: options, result: resArray});
+                Logger.debug("SQL", {sql: sql, options: options, result: resArray});
                 resolve(resArray);
             } catch (e) {
-                StackLogger.stack("SQL Fail", [sql, options, e]);
+                Logger.debug("SQL Fail", [sql, options, e]);
                 reject(e);
             }
         });
@@ -43,6 +44,7 @@ export class SequelizerUtil {
     selectOne<T>(sql: string | { query: string, values: any[] }, options?: QueryOptions | any): Promise<T> {
         return new Promise<any>(async (resolve, reject) => {
             try { // 쿼리를 실행한다
+
                 const raw = await this.sequelizer.query(sql, options);
 
                 const result: any = raw[0][0];
@@ -58,10 +60,10 @@ export class SequelizerUtil {
                     item[camelName] = result[name];
                 }
 
-                StackLogger.stack("SQL ", {sql: sql, options: options, result: item});
+                Logger.debug("SQL ", {sql: sql, options: options, result: item});
                 resolve(item);
             } catch (e) {
-                StackLogger.stack("SQL Fail", [sql, options, e]);
+                Logger.debug("SQL Fail", [sql, options, e]);
                 reject(e);
             }
         });
@@ -72,10 +74,10 @@ export class SequelizerUtil {
         return new Promise<any>(async (resolve, reject) => {
             try { // 쿼리를 실행한다
                 const raw = await this.sequelizer.query(sql, options);
-                StackLogger.stack("SQL", {sql: sql, options: options, result: raw[0]});
+                Logger.debug("SQL", {sql: sql, options: options, result: raw[0]});
                 resolve(raw[0]);
             } catch (e) {
-                StackLogger.stack("SQL Fail", [sql, options, e]);
+                Logger.debug("SQL Fail", [sql, options, e]);
                 reject(e);
             }
         });
@@ -88,10 +90,10 @@ export class SequelizerUtil {
         return new Promise<any>(async (resolve, reject) => {
             try { // 쿼리를 실행한다
                 const raw = await this.sequelizer.query(sql, options);
-                StackLogger.stack("SQL", {sql: sql, options: options, result: raw[1]});
+                Logger.debug("SQL", {sql: sql, options: options, result: raw[1]});
                 resolve(raw[1]);
             } catch (e) {
-                StackLogger.stack("SQL Fail", [sql, options, e]);
+                Logger.debug("SQL Fail", [sql, options, e]);
                 reject(e);
             }
         });

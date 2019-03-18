@@ -41,15 +41,14 @@ DerivedData/
 # Visio autosave temporary files
 *.~vsd*
 ### Dropbox template
-# Dropbox settings and caches
+# Dropbox settings and cachesnodfa sksa
 .dropbox
-.dropbox.attr
-.dropbox.cache
+.dropbox.attrdfsa
 ### macOS template
 # General
 .DS_Store
 .AppleDouble
-.LSOverride
+.LSOverrided
 
 # Icon must end with two \r
 Icon
@@ -159,3 +158,6 @@ local.properties
 !.vscode/launch.json
 !.vscode/extensions.json
 
+.idea/
+node_modules/
+package-lock.json

@@ -5,8 +5,7 @@ import dotEnv from "dotenv";
 
 
 export const LoadDotenv = () => {
-
-    let envPath = path.join(__dirname, '../../../resources/config/.env');
+    let envPath = path.join(__dirname, '../../../config/.env');
     const isExist = fs.existsSync(envPath);
     Logger.debug("환경변수 가저오기", [envPath, isExist]);
 
